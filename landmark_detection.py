@@ -13,10 +13,6 @@ gradY = cv2.Sobel(img, ddepth=cv2.CV_32F, dx=0, dy=1)
 gradient = cv2.subtract(gradX, gradY)
 gradient = cv2.convertScaleAbs(gradient)
 cv2.imshow('test', gradient)
-# (cnts, _) = cv2.contourArea(gradient.copy(),cv2.CHAIN_APPROX_NONE)
-# c = sorted(cnts, key=cv2.contourArea, reverse=True)[0]
-# rect = cv2.minAreaRect(c)
-# box = np.int0(cv2.boxPoints(rect))
-# draw_img = cv2.drawContours(img.copy(), [box], -1, (0, 0, 255), 3)
+
 cv2.imshow("draw_img", gradient)
 cv2.waitKey(0)
